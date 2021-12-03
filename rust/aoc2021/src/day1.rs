@@ -1,16 +1,9 @@
 use crate::utils;
 
 ///Day 1 solution
-pub fn day1() {
+pub fn day1() -> (usize, usize) {
     let measurements: Vec<i32> = utils::parse_input("input/day1.txt");
-    println!(
-        "Part1 - number of measurements greater than previous: {}",
-        get_count_of_increases(&measurements, 1)
-    );
-    println!(
-        "Part2 - number of 3-value window sums greater than previous: {}",
-        get_count_of_increases(&measurements, 3)
-    );
+    (get_count_of_increases(&measurements, 1), get_count_of_increases(&measurements, 3))
 }
 
 /// Takes a vector of measurements and a window size and for each
@@ -36,8 +29,9 @@ fn get_count_of_increases(measurements: &[i32], window_size: usize) -> usize {
 
 ///Day 1 solution - imperative
 #[allow(dead_code)]
-pub fn day1_imp() {
+pub fn day1_imp() -> (usize, usize) {
     let measurements = utils::parse_input_as_int_vec_imp("input/day1.txt");
+
     println!(
         "Part1 - number of measurements greater than previous: {}",
         get_count_of_increases_imp(&measurements, 1)
@@ -46,6 +40,8 @@ pub fn day1_imp() {
         "Part2 - number of 3-value window sums greater than previous: {}",
         get_count_of_increases_imp(&measurements, 3)
     );
+
+    (get_count_of_increases_imp(&measurements, 1), get_count_of_increases_imp(&measurements, 3))
 }
 
 /// Takes a vector of measurements and a window size and for each
