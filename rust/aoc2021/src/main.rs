@@ -1,72 +1,39 @@
-use std::fs;
+use std::env;
+use std::time;
+mod day1;
+mod day2;
+mod position;
+mod utils;
+
+//With thanks to CJP for the logic behind this framework.
+//I tried just to understand what he'd done and reproduce something similar
+//But it's basically identical :-(
+//
+//I'm not copying anyone's solutions though!
+static DAYS: [fn(); 2] = [day1::day1, day2::day2];
 
 fn main() {
-    day1()
-}
+    let mut min_day: usize = 1;
+    let mut max_day: usize = DAYS.len();
+    let args: Vec<String> = env::args().collect();
 
-/// Takes a file containing a list of integers, one per line, and returns the
-/// list of integers as a Vec<i32>
-fn parse_input_as_int_vec(input_file: &str) -> Vec<i32> {
-    let input = fs::read_to_string(input_file).expect("Oh dear, couldn't read file!");
-    // let mut vector: Vec<i32> = vec![];
-    // for line in input.lines() {
-    //     vector.push(line.parse::<i32>().expect("Failed to parse line!"));
-    // }
+    if args.len() > 1 {
+        // Argument specified
+        min_day = args[1]
+            .parse()
+            .expect("Bad argument - must be a day number");
+        max_day = min_day;
+    }
 
-    //Alternative functional way
-    let vector: Vec<i32> = input.lines().map(|line| line.parse().unwrap()).collect();
-    vector
-}
-
-///Day 1 solution
-fn day1() {
-    let measurements = parse_input_as_int_vec("input/day1.txt");
-    println!(
-        "Part1 - number of measurements greater than previous: {}",
-        get_count_of_increases(&measurements, 1)
-    );
-    println!(
-        "Part2 - number of 3-value window sums greater than previous: {}",
-        get_count_of_increases(&measurements, 3)
-    );
-}
-
-/// Takes a vector of measurements and a window size and for each
-/// sliding window of size window_size it counts the number of times
-/// the sum of the values in the current window is greater than at the
-/// previous window position. The window slides along by 1 index each time.    
-fn get_count_of_increases(measurements: &[i32], window_size: usize) -> usize {
-    // let mut count = 0;
-    // let mut previous_value = 0;
-    assert!(
-        measurements.len() > window_size,
-        "Window size is greater than the number of measurements!"
-    );
-    // for measurement in measurements.iter().take(window_size) {
-    //     previous_value += measurement;
-    // }
-
-    // for i in window_size..measurements.len() {
-    //     let mut current_value = 0;
-    //     for j in 0..window_size {
-    //         current_value += measurements[i - j];
-    //     }
-
-    //     if current_value > previous_value {
-    //         count += 1;
-    //     }
-
-    //     previous_value = current_value;
-    // }
-
-    // Alternative functional way
-    // Since B + C + D - (A + B + C) = D - A we can use a simple functional way // of doing this
-    let count = measurements
-        .iter()
-        .zip(&measurements[window_size..])
-        .map(|(x, y)| y - x)
-        .filter(|x| x > &0)
-        .count();
-
-    count
+    for day in min_day..max_day + 1 {
+        println!("Running day {}", day);
+        let now = time::Instant::now();
+        DAYS[day - 1]();
+        let elapsed_time = now.elapsed();
+        println!(
+            "Took {}.{:03} ms",
+            elapsed_time.as_micros() / 1000,
+            elapsed_time.as_micros() % 1000
+        );
+    }
 }
