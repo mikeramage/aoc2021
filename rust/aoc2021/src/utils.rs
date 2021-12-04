@@ -13,14 +13,26 @@ where
     vector
 }
 
-/// Takes a file containing a list of integers, one per line, and returns the
-/// list of integers as a Vec<i32> - imperative style
-#[allow(dead_code)]
-pub fn parse_input_as_int_vec_imp(input_file: &str) -> Vec<i32> {
-    let input = fs::read_to_string(input_file).expect("Oh dear, couldn't read file!");
-    let mut vector: Vec<i32> = vec![];
-    for line in input.lines() {
-        vector.push(line.parse::<i32>().expect("Failed to parse line!"));
-    }
-    vector
+/// Converts a string representing a binary number of up to 63 characters, e.g. "0100110110111" and converts to a usize.
+///
+/// It works like this:
+///  - Converts the string to a Chars iterator and enumerates - so if you've got [(0, '0'), (1, '1'), (2, '0')...]
+///  - Maps these values by left shifting the appropriate amount: ((length of the string - 1) - index) in the enumeration.
+/// To see this, remember you want to left shift the last index by 0.
+///  - Sums them.
+pub fn string_binary_to_usize(binary_as_string: String) -> usize {
+    assert!(binary_as_string.len() < 64); //Obviously this breaks if usize != 64 but I don't care.
+    let binary_as_chars = binary_as_string.chars();
+    let shift = binary_as_string.len() - 1;
+    let number: usize = binary_as_chars
+        .enumerate()
+        .map(|(index, digit)| {
+            if let '1' = digit {
+                1 << (shift - index)
+            } else {
+                0
+            }
+        })
+        .sum();
+    number
 }
