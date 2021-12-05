@@ -1,9 +1,9 @@
-use crate::utils;
 use crate::bingo;
+use crate::utils;
 use std::collections::HashSet;
 
 pub fn day4() -> (usize, usize) {
-    let data: Vec<String> =  utils::parse_input_by_blank_lines("input/day4.txt");
+    let data: Vec<String> = utils::parse_input_by_blank_lines("input/day4.txt");
     let numbers: &String = &data[0];
     let boards_input: &[String] = &data[1..];
     let mut boards: Vec<bingo::Board> = vec![];
@@ -23,7 +23,7 @@ pub fn day4() -> (usize, usize) {
                     part1 = sum;
                 }
                 if !boards_that_have_won.contains(&index) {
-                    //This will keep overwriting until the last board. 
+                    //This will keep overwriting until the last board.
                     //Works even if not all boards have won
                     part2 = sum;
                 }
@@ -32,7 +32,7 @@ pub fn day4() -> (usize, usize) {
             if boards_that_have_won.len() == boards_len {
                 //Short circuits to avoid handling any more numnbers needlessly.
                 break 'outer;
-            }    
+            }
         }
     }
 

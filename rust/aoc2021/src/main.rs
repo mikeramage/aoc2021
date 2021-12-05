@@ -1,12 +1,12 @@
 use std::env;
 use std::time;
+mod bingo;
 mod day1;
 mod day2;
 mod day3;
 mod day4;
 mod position;
 mod utils;
-mod bingo;
 
 //With thanks to CJP for the logic behind this framework.
 //I tried just to understand what he'd done and reproduce something similar
