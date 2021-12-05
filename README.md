@@ -9,3 +9,10 @@ My eyeballs are throbbing gently and the gentle tinnitus of exhaustion rings fai
 
 # Day 3
 What vile nastiness is this? Grim code for a grim problem. Back in the mists of time almost before the dawn of memory I can see a distant vision of myself not wrestling with the compiler. But it is done. And I have two stars. Do the ends justify the means? Not really. 
+
+# Day 4
+What's with the damn rust compiler? It's patronising arrogance makes me feel like a simpleton. Every time I try to compile the code, up it pops:"You think you're clever? Ha, ha, ha. You think you can write code? Oh, no no no no, my dear boy! Let me explain to you what you did wrong. I will demonstrate the many reasons why you should not be writing code". 
+
+After a few minutes of consideration I came up with what I thought was a decent enough design. Turned out it was, more or less. But would Rust let me express it in code in fewer than 4 hours? Nope, just one "tut tut - you've borrowed an &&String when *obviously* you need a mut &str, moron" after another. 
+
+Python beckons me down from the ivory tower with its siren call of cheap and filthy simplicity. "With me you can just bash out a simple little script that just does the job any way you like. I won't criticise. I won't judge. Come to me. You know you want to." No, Python, *no*!  I will satisfy the borrow checker. I will satsify the trait bounds. I will appease the demands of the compiler. I will make clippy happy. I will *not* give in to your cheap and superficial charms! I will achieve the purity of unsullied Rust or die in the attempt!

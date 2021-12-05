@@ -13,6 +13,12 @@ where
     vector
 }
 
+pub fn parse_input_by_blank_lines(input_file: &str) -> Vec<String> {
+    let input = fs::read_to_string(input_file).expect("Oh dear, couldn't read file!");
+    let vector: Vec<String> = input.split("\n\n").map(|x| x.to_string()).collect();
+    vector
+}
+
 /// Converts a string representing a binary number of up to 63 characters, e.g. "0100110110111" and converts to a usize.
 ///
 /// It works like this:
