@@ -16,3 +16,8 @@ What's with the damn rust compiler? It's patronising arrogance makes me feel lik
 After a few minutes of consideration I came up with what I thought was a decent enough design. Turned out it was, more or less. But would Rust let me express it in code in fewer than 4 hours? Nope, just one "tut tut - you've borrowed an &&String when *obviously* you need a mut &str, moron" after another. 
 
 Python beckons me down from the ivory tower with its siren call of cheap and filthy simplicity. "With me you can just bash out a simple little script that just does the job any way you like. I won't criticise. I won't judge. Come to me. You know you want to." No, Python, *no*!  I will satisfy the borrow checker. I will satsify the trait bounds. I will appease the demands of the compiler. I will make clippy happy. I will *not* give in to your cheap and superficial charms! I will achieve the purity of unsullied Rust or die in the attempt!
+
+# Day 5
+My solution is, frankly, disgusting. I do not recommend reading this code if you value your eyesight or want to keep your lunch down. Ironically, the Rust compiler was pretty forgiving this time - maybe it just went off in a supercilious huff when it saw the state of what I was trying to run past it. "Yeah, mate, whatever, I'll compile it. Just don't ask me to look at your filthy code ever again. Ever." I couldn't even be bothered to write it in a way that produced an answer to part 1 and part 2 in the same pass. 
+
+But it worked, you hear me!? It worked!
