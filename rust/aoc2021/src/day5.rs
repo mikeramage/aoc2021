@@ -26,30 +26,23 @@ pub fn day5() -> (usize, usize) {
     //Build up the map for horizontal lines only
     for line in lines {
         //Only consider horizontal
-        // println!("Line: {:?}", line);
         if line.0 == line.2 {
-            // println!("X coord the same: {}", line.0);
             for i in min(line.1, line.3)..=max(line.1, line.3) {
-                // println!("Y coord is: {}", i);
                 let val = match map.get(&(line.0, i)) {
                     //Key present? Increment value by 1
                     Some(x) => x + 1,
                     None => 1,
                 };
                 map.insert((line.0, i), val);
-                // println!("Map is now: {:?}", map);
             }
         } else if line.1 == line.3 {
-            // println!("Y coord the same: {}", line.1);
             for i in min(line.0, line.2)..=max(line.0, line.2) {
-                // println!("X coord is: {}", i);
                 let val = match map.get(&(i, line.1)) {
                     //Key present? Increment value by 1
                     Some(x) => x + 1,
                     None => 1,
                 };
                 map.insert((i, line.1), val);
-                // println!("Map is now: {:?}", map);
             }
         } else {
             //diagonal - this isn't pretty but it's not interesting enough for me to care
@@ -79,7 +72,6 @@ pub fn day5() -> (usize, usize) {
             } else if line.2 < line.0 && line.3 > line.1 {
                 let mut j = line.1;
                 for i in (line.2..=line.0).rev() {
-                    println!("{}", i);
                     let val = match map.get(&(i, j)) {
                         //Key present? Increment value by 1
                         Some(x) => x + 1,
