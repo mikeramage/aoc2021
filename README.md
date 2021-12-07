@@ -24,3 +24,6 @@ But it worked, you hear me!? It worked!
 
 # Day 6
 Turns out iterating through an array of billions of entries is quite time-consuming. So I had to write two programs. Perhaps the word "exponential" should have set off some alarms. Ah well. At least the compiler didn't moan too much. Am I getting better, or did I just get lucky? 
+
+# Day 7
+Meh. I'm sure there's a more elegant algorithm to calculate this, but things to do, people to see. And hey, Rust, why do you have to make simple maths so awkward?
