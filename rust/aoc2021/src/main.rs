@@ -6,6 +6,7 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day6;
 mod position;
 mod utils;
 
@@ -14,8 +15,14 @@ mod utils;
 //But it's basically identical :-(
 //
 //I'm not copying anyone's solutions though!
-static DAYS: [fn() -> (usize, usize); 5] =
-    [day1::day1, day2::day2, day3::day3, day4::day4, day5::day5];
+static DAYS: [fn() -> (usize, usize); 6] = [
+    day1::day1,
+    day2::day2,
+    day3::day3,
+    day4::day4,
+    day5::day5,
+    day6::day6,
+];
 
 fn main() {
     let mut min_day: usize = 1;

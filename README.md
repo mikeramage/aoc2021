@@ -21,3 +21,6 @@ Python beckons me down from the ivory tower with its siren call of cheap and fil
 My solution is, frankly, disgusting. I do not recommend reading this code if you value your eyesight or want to keep your lunch down. Ironically, the Rust compiler was pretty forgiving this time - maybe it just went off in a supercilious huff when it saw the state of what I was trying to run past it. "Yeah, mate, whatever, I'll compile it. Just don't ask me to look at your filthy code ever again. Ever." I couldn't even be bothered to write it in a way that produced an answer to part 1 and part 2 in the same pass. 
 
 But it worked, you hear me!? It worked!
+
+# Day 6
+Turns out iterating through an array of billions of entries is quite time-consuming. So I had to write two programs. Perhaps the word "exponential" should have set off some alarms. Ah well. At least the compiler didn't moan too much. Am I getting better, or did I just get lucky? 
