@@ -29,4 +29,4 @@ Turns out iterating through an array of billions of entries is quite time-consum
 Meh. I'm sure there's a more elegant algorithm to calculate this, but things to do, people to see. And hey, Rust, why do you have to make simple maths so awkward?
 
 # Day 8
-There are probably several ways to do implement a solution to this problem well. This is not one of them.
+There are probably several ways to implement a clear and elegant solution to this problem. This is not one of them.
