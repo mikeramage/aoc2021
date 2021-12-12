@@ -19,6 +19,28 @@ pub fn parse_input_by_blank_lines(input_file: &str) -> Vec<String> {
     vector
 }
 
+pub fn parse_input_usizes(input_file: &str) -> Vec<Vec<usize>> {
+    let input = fs::read_to_string(input_file).expect("Oh dear, couldn't read file!");
+    let mut vector: Vec<String> = input.lines().map(|line| line.parse().unwrap()).collect();
+    vector
+        .iter_mut()
+        .map(|x: &mut String| {
+            x.chars()
+                .map(|y| y.to_digit(10).unwrap() as usize)
+                .collect()
+        })
+        .collect::<Vec<Vec<usize>>>()
+}
+
+pub fn parse_input_chars(input_file: &str) -> Vec<Vec<char>> {
+    let input = fs::read_to_string(input_file).expect("Oh dear, couldn't read file!");
+    let mut vector: Vec<String> = input.lines().map(|line| line.parse().unwrap()).collect();
+    vector
+        .iter_mut()
+        .map(|x: &mut String| x.chars().collect())
+        .collect::<Vec<Vec<char>>>()
+}
+
 /// Converts a string representing a binary number of up to 63 characters, e.g. "0100110110111" and converts to a usize.
 ///
 /// It works like this:

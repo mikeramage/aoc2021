@@ -30,3 +30,9 @@ Meh. I'm sure there's a more elegant algorithm to calculate this, but things to 
 
 # Day 8
 There are probably several ways to implement a clear and elegant solution to this problem. This is not one of them.
+
+# Day 9
+Again, not pretty, but it works. 
+
+# Day 10
+Prettier than day 9, in the same way that goblins are prettier than trolls. 

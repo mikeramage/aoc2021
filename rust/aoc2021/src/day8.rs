@@ -100,10 +100,11 @@ pub fn day8() -> (usize, usize) {
                     {
                         digit_map.insert(0, raw_bitmaps[index]);
                         reverse_digit_map.insert(raw_bitmaps[index], 0);
-                    } else if let std::collections::hash_map::Entry::Vacant(e) = digit_map.entry(9) {
-                         e.insert(raw_bitmaps[index]);
-                         reverse_digit_map.insert(raw_bitmaps[index], 9);
-                     }
+                    } else if let std::collections::hash_map::Entry::Vacant(e) = digit_map.entry(9)
+                    {
+                        e.insert(raw_bitmaps[index]);
+                        reverse_digit_map.insert(raw_bitmaps[index], 9);
+                    }
                 }
                 _ => (),
             }
