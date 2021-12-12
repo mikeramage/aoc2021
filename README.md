@@ -32,7 +32,7 @@ Meh. I'm sure there's a more elegant algorithm to calculate this, but things to 
 There are probably several ways to implement a clear and elegant solution to this problem. This is not one of them.
 
 # Day 9
-Again, not pretty, but it works. 
+Again, not pretty, but it works. Do not look at cargo clippy.
 
 # Day 10
-Prettier than day 9, in the same way that goblins are prettier than trolls. 
+Prettier than day 9, in the same way that goblins are prettier than trolls. Really, do *not* look at cargo clippy.
