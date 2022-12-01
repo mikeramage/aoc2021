@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use std::collections::HashSet;
 
 pub fn day9() -> (usize, usize) {
-    let mut part2: usize = 0;
+    let part2: usize = 0;
     let input: Vec<Vec<usize>> = utils::parse_input_usizes("input/day9.txt");
 
     let mut low_points: HashSet<(usize, usize)> = HashSet::new();

@@ -11,15 +11,19 @@ mod day6;
 mod day7;
 mod day8;
 mod day9;
+mod day11;
+mod day12;
 mod position;
+mod octopus;
 mod utils;
+mod cave;
 
 //With thanks to CJP for the logic behind this framework.
 //I tried just to understand what he'd done and reproduce something similar
 //But it's basically identical :-(
 //
 //I'm not copying anyone's solutions though!
-static DAYS: [fn() -> (usize, usize); 10] = [
+static DAYS: [fn() -> (usize, usize); 12] = [
     day1::day1,
     day2::day2,
     day3::day3,
@@ -30,6 +34,8 @@ static DAYS: [fn() -> (usize, usize); 10] = [
     day8::day8,
     day9::day9,
     day10::day10,
+    day11::day11,
+    day12::day12,
 ];
 
 fn main() {

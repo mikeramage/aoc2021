@@ -3,7 +3,7 @@ use std::collections::HashMap;
 
 pub fn day10() -> (usize, usize) {
     let mut part1: usize = 0;
-    let mut part2: usize = 0;
+    let part2: usize;
     // Combine for part1 and part2. Note for part 2, points use the openers
     // because that's what I'll be popping off the stack.
     let points: HashMap<char, usize> = HashMap::from([
@@ -16,7 +16,7 @@ pub fn day10() -> (usize, usize) {
         ('{', 3),
         ('<', 4),
     ]);
-    let mut input: Vec<Vec<char>> = utils::parse_input_chars("input/day10.txt");
+    let input: Vec<Vec<char>> = utils::parse_input_chars("input/day10.txt");
     // This is a stack. We push openers onto it and pop them back off when we find the closer
     // If we find an invalid closer,
     let mut scores: Vec<usize> = vec![];
